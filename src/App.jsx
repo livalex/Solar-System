@@ -1,11 +1,8 @@
 import React from "react";
-import "./App.css";
-import { Background } from "./components/canvas";
+import Scene from "./components/canvas/scene/Scene";
 
 function App() {
-  return (
-    <Background />
-  );
+  return <Scene />;
 }
 
 export default App;
