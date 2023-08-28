@@ -45,6 +45,7 @@ function PlanetModel({
     modelPath,
     hasObliqueEcliptic,
     revolutionPeriodMultiplyFactor,
+    dayLengthMultiplyFactor,
   },
 }) {
   const planetRef = React.useRef();
@@ -75,6 +76,7 @@ function PlanetModel({
         scale={size}
         hasObliqueEcliptic={hasObliqueEcliptic}
         revolutionPeriodMultiplyFactor={revolutionPeriodMultiplyFactor}
+        dayLengthMultiplyFactor={dayLengthMultiplyFactor}
       />
       <Ecliptic
         xRadius={xRadius}
@@ -91,7 +93,13 @@ function Sun() {
     //   <sphereGeometry args={[20, 32, 32]} />
     //   <meshStandardMaterial color="#E1DC59" />
     // </mesh>
-    <Planet xRadius={-1} zRadius={-1} path="./sun/scene.gltf" scale={2.5} />
+    <Planet
+      xRadius={-1}
+      zRadius={-1}
+      path="./sun/scene.gltf"
+      scale={2.5}
+      dayLengthMultiplyFactor={1.2}
+    />
   );
 }
 

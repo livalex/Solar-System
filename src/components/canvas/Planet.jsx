@@ -9,6 +9,7 @@ const Planet = ({
   scale,
   hasObliqueEcliptic,
   revolutionPeriodMultiplyFactor,
+  dayLengthMultiplyFactor,
 }) => {
   const model = useGLTF(path);
   const primitiveRef = useRef();
@@ -16,7 +17,7 @@ const Planet = ({
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
 
-    // primitiveRef.current.rotation.y = t;
+    primitiveRef.current.rotation.y = t * dayLengthMultiplyFactor;
 
     // the sun stays in place
     if (xRadius !== -1 && zRadius !== -1) {

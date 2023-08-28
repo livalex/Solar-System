@@ -15,6 +15,7 @@ export const planets = [
     modelPath: "./mercury/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 2,
+    dayLengthMultiplyFactor: 0.6,
   },
   {
     id: 1,
@@ -24,6 +25,7 @@ export const planets = [
     modelPath: "./venus/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1.8,
+    dayLengthMultiplyFactor: 0.1,
   },
   {
     id: 2,
@@ -33,6 +35,7 @@ export const planets = [
     modelPath: "./earth/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1.6,
+    dayLengthMultiplyFactor: 1.6,
   },
   {
     id: 3,
@@ -42,15 +45,17 @@ export const planets = [
     modelPath: "./mars/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1.4,
+    dayLengthMultiplyFactor: 1.62,
   },
   {
     id: 4,
-    name: "Jupiter", // aici
+    name: "Jupiter",
     size: 1.4,
     color: randomColor(),
     modelPath: "./jupiter/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1.2,
+    dayLengthMultiplyFactor: 1.8,
   },
   {
     id: 5,
@@ -60,6 +65,7 @@ export const planets = [
     modelPath: "./saturn/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1,
+    dayLengthMultiplyFactor: 1.77,
   },
   {
     id: 6,
@@ -69,6 +75,7 @@ export const planets = [
     modelPath: "./uranus/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 0.8,
+    dayLengthMultiplyFactor: 1.71,
   },
   {
     id: 7,
@@ -78,6 +85,7 @@ export const planets = [
     modelPath: "./neptune/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 0.6,
+    dayLengthMultiplyFactor: 1.73,
   },
   {
     id: 8,
@@ -87,5 +95,6 @@ export const planets = [
     modelPath: "./pluto/scene.gltf",
     hasObliqueEcliptic: true,
     revolutionPeriodMultiplyFactor: 0.4,
+    dayLengthMultiplyFactor: 1.4,
   },
 ];
