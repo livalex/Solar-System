@@ -60,7 +60,7 @@ export const planets = [
   {
     id: 5,
     name: "Saturn",
-    size: 2.1,
+    size: 10,
     color: randomColor(),
     modelPath: "./saturn/scene.gltf",
     hasObliqueEcliptic: false,

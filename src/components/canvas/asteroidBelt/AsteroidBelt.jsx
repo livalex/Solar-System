@@ -10,7 +10,7 @@ const Stars = (props) => {
   const points = [];
   for (let i = 0; i < 5000; i++) {
     const angle = Math.random() * Math.PI * 2;
-    const rho = Math.random() + 7;
+    const rho = Math.random() + 10.5;
     let x = Math.sqrt(rho) * Math.cos(angle);
     let y = Math.sqrt(rho) * Math.sin(angle);
     x = (x * ((9 + 1) * 25)) / 6;
