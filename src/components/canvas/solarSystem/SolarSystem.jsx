@@ -4,7 +4,7 @@ import { Line, OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
 import planetData from "./PlanetData";
 import "./SolarSystem.css";
-import { planets } from "../../../constants/constants";
+import { asteroidBelts, planets } from "../../../constants/constants";
 import Planet from "../Planet";
 import AsteroidBelt from "../asteroidBelt/AsteroidBelt";
 
@@ -110,14 +110,22 @@ export default function SolarSystem() {
       {planets.map((planet) => (
         <PlanetModel planet={planet} key={planet.id} />
       ))}
-      <AsteroidBelt />
+      <AsteroidBelt
+        ellipseStartPoint={asteroidBelts[0].ellipseStartPoint}
+        ellipseWidthFactor={asteroidBelts[0].ellipseWidthFactor}
+      />
+      <AsteroidBelt
+        ellipseStartPoint={asteroidBelts[1].ellipseStartPoint}
+        ellipseWidthFactor={asteroidBelts[1].ellipseWidthFactor}
+      />
+      ;
       <Lights />
       <OrbitControls
       // enableZoom={false}
       />
       <Stars
         radius={220}
-        count={1000}
+        count={2000}
         factor={4}
         saturation={0}
         fade

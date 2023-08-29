@@ -60,7 +60,7 @@ export const planets = [
   {
     id: 5,
     name: "Saturn",
-    size: 10,
+    size: 8.5,
     color: randomColor(),
     modelPath: "./saturn/scene.gltf",
     hasObliqueEcliptic: false,
@@ -96,5 +96,16 @@ export const planets = [
     hasObliqueEcliptic: true,
     revolutionPeriodMultiplyFactor: 0.4,
     dayLengthMultiplyFactor: 1.4,
+  },
+];
+
+export const asteroidBelts = [
+  {
+    ellipseStartPoint: 10.5,
+    ellipseWidthFactor: 6,
+  },
+  {
+    ellipseStartPoint: 0.3,
+    ellipseWidthFactor: 0.5,
   },
 ];
