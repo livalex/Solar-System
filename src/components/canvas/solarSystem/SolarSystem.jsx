@@ -1,7 +1,13 @@
 import React from "react";
 import { OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
-import { asteroidBelts, planets } from "../../../constants/constants";
+import {
+  asteroidBelts,
+  eclipticLength,
+  eclipticWidth,
+  planets,
+  sunScale,
+} from "../../../constants/constants";
 import Planet from "../Planet";
 import AsteroidBelt from "../asteroidBelt/AsteroidBelt";
 
@@ -41,8 +47,8 @@ function PlanetModel({
   },
 }) {
   const planetRef = React.useRef();
-  const xRadius = (id + 1) * 31.5;
-  const zRadius = (id + 1) * 30.5;
+  const xRadius = (id + 1) * eclipticLength;
+  const zRadius = (id + 1) * eclipticWidth;
 
   return (
     <>
@@ -70,13 +76,15 @@ function Sun() {
       xRadius={-1}
       zRadius={-1}
       path="./sun/scene.gltf"
-      scale={2.5}
+      scale={sunScale}
       dayLengthMultiplyFactor={1.2}
     />
   );
 }
 
 export default function SolarSystem() {
+  const [asteroidBelt, outerSpace] = asteroidBelts;
+
   return (
     <>
       <Sun />
@@ -84,18 +92,16 @@ export default function SolarSystem() {
         <PlanetModel planet={planet} key={planet.id} />
       ))}
       <AsteroidBelt
-        ellipseStartPoint={asteroidBelts[0].ellipseStartPoint}
-        ellipseWidthFactor={asteroidBelts[0].ellipseWidthFactor}
+        ellipseStartPoint={asteroidBelt.ellipseStartPoint}
+        ellipseWidthFactor={asteroidBelt.ellipseWidthFactor}
       />
       <AsteroidBelt
-        ellipseStartPoint={asteroidBelts[1].ellipseStartPoint}
-        ellipseWidthFactor={asteroidBelts[1].ellipseWidthFactor}
+        ellipseStartPoint={outerSpace.ellipseStartPoint}
+        ellipseWidthFactor={outerSpace.ellipseWidthFactor}
       />
       ;
       <Lights />
-      <OrbitControls
-      // enableZoom={false}
-      />
+      <OrbitControls />
       <Stars
         radius={220}
         count={2000}

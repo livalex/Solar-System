@@ -1,8 +1,15 @@
-export const planets = [
+export let eclipticLength = 31.5;
+export let eclipticWidth = 30.5;
+
+export let cameraPos = [0, 100, 530];
+
+export let sunScale = 2.5;
+
+export let planets = [
   {
     id: 0,
     name: "Mercury",
-    size: 0.3,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.3 : 0.1,
     modelPath: "./mercury/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 2,
@@ -11,7 +18,7 @@ export const planets = [
   {
     id: 1,
     name: "Venus",
-    size: 0.09,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.09 : 0.02,
     modelPath: "./venus/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1.8,
@@ -20,7 +27,7 @@ export const planets = [
   {
     id: 2,
     name: "Earth",
-    size: 0.07,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.07 : 0.015,
     modelPath: "./earth/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1.6,
@@ -29,7 +36,7 @@ export const planets = [
   {
     id: 3,
     name: "Mars",
-    size: 5,
+    size: window.matchMedia("(min-width: 640px)").matches ? 5 : 1.6,
     modelPath: "./mars/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1.4,
@@ -38,7 +45,7 @@ export const planets = [
   {
     id: 4,
     name: "Jupiter",
-    size: 1.4,
+    size: window.matchMedia("(min-width: 640px)").matches ? 1.4 : 0.5,
     modelPath: "./jupiter/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1.2,
@@ -47,7 +54,7 @@ export const planets = [
   {
     id: 5,
     name: "Saturn",
-    size: 8.5,
+    size: window.matchMedia("(min-width: 640px)").matches ? 8.5 : 2.8,
     modelPath: "./saturn/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1,
@@ -56,7 +63,7 @@ export const planets = [
   {
     id: 6,
     name: "Uranus",
-    size: 0.06,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.06 : 0.02,
     modelPath: "./uranus/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 0.8,
@@ -65,7 +72,7 @@ export const planets = [
   {
     id: 7,
     name: "Neptune",
-    size: 0.55,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.55 : 0.15,
     modelPath: "./neptune/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 0.6,
@@ -74,7 +81,7 @@ export const planets = [
   {
     id: 8,
     name: "Pluto",
-    size: 0.0125,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.0125 : 0.005,
     modelPath: "./pluto/scene.gltf",
     hasObliqueEcliptic: true,
     revolutionPeriodMultiplyFactor: 0.4,
@@ -82,7 +89,7 @@ export const planets = [
   },
 ];
 
-export const asteroidBelts = [
+export let asteroidBelts = [
   {
     ellipseStartPoint: 10.5,
     ellipseWidthFactor: 6,
@@ -92,3 +99,23 @@ export const asteroidBelts = [
     ellipseWidthFactor: 0.5,
   },
 ];
+
+if (!window.matchMedia("(min-width: 640px)").matches) {
+  eclipticLength = 10.5;
+  eclipticWidth = 9.5;
+
+  cameraPos = [0, 100, 500];
+
+  asteroidBelts = [
+    {
+      ellipseStartPoint: 7.6,
+      ellipseWidthFactor: 16,
+    },
+    {
+      ellipseStartPoint: 0.05,
+      ellipseWidthFactor: 0.5,
+    },
+  ];
+
+  sunScale = 0.8;
+}
