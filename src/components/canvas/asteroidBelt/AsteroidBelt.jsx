@@ -1,6 +1,5 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial, Preload, Point } from "@react-three/drei";
-import React, { Suspense, useRef, useState } from "react";
+import { Points, PointMaterial } from "@react-three/drei";
+import React from "react";
 
 const AsteroidBelt = ({ ellipseStartPoint, ellipseWidthFactor }) => {
   const points = [];

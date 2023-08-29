@@ -1,9 +1,6 @@
-import React, { useMemo, useState } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Line, OrbitControls, Stars } from "@react-three/drei";
+import React from "react";
+import { OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
-import planetData from "./PlanetData";
-import "./SolarSystem.css";
 import { asteroidBelts, planets } from "../../../constants/constants";
 import Planet from "../Planet";
 import AsteroidBelt from "../asteroidBelt/AsteroidBelt";
@@ -30,12 +27,7 @@ function Ecliptic({ xRadius = 1, zRadius = 1, hasObliqueEcliptic = false }) {
 }
 
 function Lights() {
-  return (
-    <>
-      <ambientLight />
-      {/* <pointLight position={[0, 0, 0]} /> */}
-    </>
-  );
+  return <ambientLight />;
 }
 
 function PlanetModel({
@@ -49,26 +41,11 @@ function PlanetModel({
   },
 }) {
   const planetRef = React.useRef();
-
-  // const xRadius = (id + 1) * 1.1 * 25;
-  // const zRadius = (id + 1) * 1.1 * 24;
   const xRadius = (id + 1) * 31.5;
   const zRadius = (id + 1) * 30.5;
 
-  // useFrame(({ clock }) => {
-  //   const t = clock.getElapsedTime();
-  //   const x = xRadius * Math.sin(t);
-  //   const z = zRadius * Math.cos(t);
-  //   planetRef.current.position.x = x;
-  //   planetRef.current.position.z = z;
-  // });
-
   return (
     <>
-      {/* <mesh ref={planetRef}>
-        <sphereGeometry args={[size, 32, 32]} />
-        <meshStandardMaterial color={color} />
-      </mesh> */}
       <Planet
         xRadius={xRadius}
         zRadius={zRadius}
@@ -89,10 +66,6 @@ function PlanetModel({
 
 function Sun() {
   return (
-    // <mesh>
-    //   <sphereGeometry args={[20, 32, 32]} />
-    //   <meshStandardMaterial color="#E1DC59" />
-    // </mesh>
     <Planet
       xRadius={-1}
       zRadius={-1}
