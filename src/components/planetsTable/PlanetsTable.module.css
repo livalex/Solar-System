@@ -32,10 +32,35 @@ ul li:not(:first-child) {
 
 ul li:hover:not(:first-child) {
   color: #ffbd00;
+  background-color: rgba(30, 30, 30, 0.75);
 }
 
-ul li:not(:first-child)::after {
-  content: "+";
+.plus-icon {
   position: absolute;
   right: 1rem;
+}
+
+.minus-icon {
+  position: absolute;
+  right: 1.1rem;
+}
+
+.selected {
+  background-color: rgba(30, 30, 30, 0.75);
+  color: #3beaf7 !important;
+}
+
+.table-data {
+  color: white;
+  font-size: 0.8rem;
+}
+
+.details {
+  padding: 1rem;
+  background-color: rgba(25, 25, 25, 0.5);
+  border-bottom: 1px solid rgba(45, 45, 45, 0.8);
+}
+
+table {
+  width: 100%;
 }

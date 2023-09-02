@@ -173,3 +173,21 @@ if (!window.matchMedia("(min-width: 640px)").matches) {
 
   sunScale = 0.8;
 }
+
+export const variableToNameMap = {
+  diameter: "Diameter",
+  semiMajorAxis: "Semi-major Axis",
+  lengthOfTheDay: "Length Of Day",
+  orbitalPeriod: "Orbital Period",
+  orbitInclination: "Orbit Inclination",
+  surfaceTemp: "Surface Temp",
+};
+
+export const planetData = [
+  "diameter",
+  "semiMajorAxis",
+  "lengthOfTheDay",
+  "orbitalPeriod",
+  "orbitInclination",
+  "surfaceTemp",
+];
