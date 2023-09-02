@@ -3,7 +3,7 @@ import SolarSystem from "../solarSystem/SolarSystem";
 import classes from "./Scene.module.css";
 import { Canvas } from "@react-three/fiber";
 
-const Scene = () => {
+const Scene = ({ clickedItem, hoveredItem }) => {
   return (
     <div className={classes.background}>
       <Canvas
@@ -14,7 +14,7 @@ const Scene = () => {
         shadows
         gl={{ preserveDrawingBuffer: true }}
       >
-        <SolarSystem />
+        <SolarSystem clickedItem={clickedItem} hoveredItem={hoveredItem} />
       </Canvas>
     </div>
   );

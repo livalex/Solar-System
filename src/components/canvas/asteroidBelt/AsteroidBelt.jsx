@@ -31,4 +31,4 @@ const AsteroidBelt = ({ ellipseStartPoint, ellipseWidthFactor }) => {
   );
 };
 
-export default AsteroidBelt;
+export default React.memo(AsteroidBelt);

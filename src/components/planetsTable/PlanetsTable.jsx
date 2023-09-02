@@ -8,10 +8,8 @@ import {
 import "react-slidedown/lib/slidedown.css";
 import { DropdownHoc } from "../DropdownHoc";
 
-const PlanetsTable = () => {
-  const [clickedItem, setClickedItem] = useState(null);
-
-  const onClickHandle = (id) => {
+const PlanetsTable = ({ clickedItem, setClickedItem, setHoveredItem }) => {
+  const clickHandler = (id) => {
     if (clickedItem === id) {
       setClickedItem(null);
     } else {
@@ -32,7 +30,9 @@ const PlanetsTable = () => {
       {planets.map((planet) => (
         <React.Fragment key={`${planet.id}-${planet.name}`}>
           <li
-            onClick={() => onClickHandle(planet.id)}
+            onClick={() => clickHandler(planet.id)}
+            onMouseEnter={() => setHoveredItem(planet.id)}
+            onMouseLeave={() => setHoveredItem(null)}
             className={clickedItem === planet.id ? classes.selected : ""}
           >
             {planet.name}

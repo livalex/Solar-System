@@ -11,7 +11,14 @@ import {
 import Planet from "../Planet";
 import AsteroidBelt from "../asteroidBelt/AsteroidBelt";
 
-function Ecliptic({ xRadius = 1, zRadius = 1, hasObliqueEcliptic = false }) {
+function Ecliptic({
+  xRadius = 1,
+  zRadius = 1,
+  hasObliqueEcliptic = false,
+  clickedItem,
+  hoveredItem,
+  id,
+}) {
   const points = [];
   for (let index = 0; index < 64; index++) {
     const angle = (index / 64) * 2 * Math.PI;
@@ -25,9 +32,18 @@ function Ecliptic({ xRadius = 1, zRadius = 1, hasObliqueEcliptic = false }) {
   points.push(points[0]);
 
   const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
+
+  let color = "#BFBBDA";
+
+  if ((hoveredItem === id && clickedItem === id) || clickedItem === id) {
+    color = "#800080";
+  } else if (hoveredItem === id) {
+    color = "#ffbd00";
+  }
+
   return (
     <line geometry={lineGeometry}>
-      <lineBasicMaterial attach="material" color="#BFBBDA" linewidth={10} />
+      <lineBasicMaterial attach="material" color={color} />
     </line>
   );
 }
@@ -45,6 +61,8 @@ function PlanetModel({
     revolutionPeriodMultiplyFactor,
     dayLengthMultiplyFactor,
   },
+  clickedItem,
+  hoveredItem,
 }) {
   const planetRef = React.useRef();
   const xRadius = (id + 1) * eclipticLength;
@@ -65,6 +83,9 @@ function PlanetModel({
         xRadius={xRadius}
         zRadius={zRadius}
         hasObliqueEcliptic={hasObliqueEcliptic}
+        clickedItem={clickedItem}
+        hoveredItem={hoveredItem}
+        id={id}
       />
     </>
   );
@@ -82,14 +103,19 @@ function Sun() {
   );
 }
 
-export default function SolarSystem() {
+export default function SolarSystem({ clickedItem, hoveredItem }) {
   const [asteroidBelt, outerSpace] = asteroidBelts;
 
   return (
     <>
       <Sun />
       {planets.map((planet) => (
-        <PlanetModel planet={planet} key={planet.id} />
+        <PlanetModel
+          planet={planet}
+          key={planet.id}
+          clickedItem={clickedItem}
+          hoveredItem={hoveredItem}
+        />
       ))}
       <AsteroidBelt
         ellipseStartPoint={asteroidBelt.ellipseStartPoint}
