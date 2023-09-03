@@ -2,13 +2,18 @@
 
 .table {
   position: fixed;
-  left: 0;
-  top: 0;
+  left: 0.8rem;
+  top: 3rem;
   background: rgba(25, 25, 25, 0.15);
   z-index: 1;
   border: 2px solid rgba(45, 45, 45, 0.85);
   list-style-type: none;
   width: 15rem;
+  display: none;
+}
+
+.opened-table {
+  display: block;
 }
 
 ul li {
@@ -47,7 +52,7 @@ ul li:hover:not(:first-child) {
 
 .selected {
   background-color: rgba(30, 30, 30, 0.75);
-  color: #3beaf7 !important;
+  color: #800080 !important;
 }
 
 .table-data {
@@ -63,4 +68,12 @@ ul li:hover:not(:first-child) {
 
 table {
   width: 100%;
+}
+
+@media (min-width: 640px) {
+  .table {
+    left: 0;
+    top: 0;
+    display: block;
+  }
 }
