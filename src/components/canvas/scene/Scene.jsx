@@ -1,4 +1,4 @@
-import { cameraPos } from "../../../constants/constants";
+import { cameraPos } from "../../../config/constants";
 import SolarSystem from "../solarSystem/SolarSystem";
 import classes from "./Scene.module.css";
 import { Canvas } from "@react-three/fiber";

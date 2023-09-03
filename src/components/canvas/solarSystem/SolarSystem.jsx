@@ -7,7 +7,7 @@ import {
   eclipticWidth,
   planets,
   sunScale,
-} from "../../../constants/constants";
+} from "../../../config/constants";
 import Planet from "../Planet";
 import AsteroidBelt from "../asteroidBelt/AsteroidBelt";
 

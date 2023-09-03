@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import classes from "./PlanetsTable.module.css";
-import {
-  planetData,
-  planets,
-  variableToNameMap,
-} from "../../constants/constants";
+import { planetData, planets, variableToNameMap } from "../../config/constants";
 import "react-slidedown/lib/slidedown.css";
 import { DropdownHoc } from "../DropdownHoc";
 import ToggleIcon from "../toggle/ToggleIcon";

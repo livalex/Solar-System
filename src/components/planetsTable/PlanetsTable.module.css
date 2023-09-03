@@ -2,18 +2,19 @@
 
 .table {
   position: fixed;
-  left: 0.8rem;
   top: 3rem;
   background: rgba(25, 25, 25, 0.15);
   z-index: 1;
   border: 2px solid rgba(45, 45, 45, 0.85);
   list-style-type: none;
   width: 15rem;
-  display: none;
+  left: -15rem;
+  transition: 1s;
 }
 
 .opened-table {
-  display: block;
+  transition: 1s;
+  left: 0.8rem;
 }
 
 ul li {
