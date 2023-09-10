@@ -3,7 +3,7 @@ import SolarSystem from "../solarSystem/SolarSystem";
 import classes from "./Scene.module.css";
 import { Canvas } from "@react-three/fiber";
 
-const Scene = ({ clickedItem, hoveredItem }) => {
+const Scene = ({ clickedItem, hoveredItem, lerping, setLerping }) => {
   return (
     <div className={classes.background}>
       <Canvas
@@ -13,8 +13,14 @@ const Scene = ({ clickedItem, hoveredItem }) => {
         // frameloop="demand"
         shadows
         gl={{ preserveDrawingBuffer: true }}
+        onPointerDown={() => setLerping(false)}
+        onWheel={() => setLerping(false)}
       >
-        <SolarSystem clickedItem={clickedItem} hoveredItem={hoveredItem} />
+        <SolarSystem
+          clickedItem={clickedItem}
+          hoveredItem={hoveredItem}
+          lerping={lerping}
+        />
       </Canvas>
     </div>
   );

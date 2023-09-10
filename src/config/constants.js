@@ -1,3 +1,8 @@
+// computer
+
+export let xZoomOutLvl = -40;
+export let yZoomOutLvl = 5;
+
 export let eclipticLength = 31.5;
 export let eclipticWidth = 30.5;
 
@@ -154,7 +159,11 @@ export let asteroidBelts = [
   },
 ];
 
+// phone
 if (!window.matchMedia("(min-width: 640px)").matches) {
+  xZoomOutLvl = -30;
+  yZoomOutLvl = 5;
+
   eclipticLength = 10.5;
   eclipticWidth = 9.5;
 

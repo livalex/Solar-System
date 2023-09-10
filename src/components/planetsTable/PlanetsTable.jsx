@@ -5,7 +5,12 @@ import "react-slidedown/lib/slidedown.css";
 import { DropdownHoc } from "../DropdownHoc";
 import ToggleIcon from "../toggle/ToggleIcon";
 
-const PlanetsTable = ({ clickedItem, setClickedItem, setHoveredItem }) => {
+const PlanetsTable = ({
+  clickedItem,
+  setClickedItem,
+  setHoveredItem,
+  setLerping,
+}) => {
   const [isToggled, setIsToggled] = useState(false);
 
   const clickHandler = (id) => {
@@ -13,6 +18,7 @@ const PlanetsTable = ({ clickedItem, setClickedItem, setHoveredItem }) => {
       setClickedItem(null);
     } else {
       setClickedItem(id);
+      setLerping(true);
     }
   };
 

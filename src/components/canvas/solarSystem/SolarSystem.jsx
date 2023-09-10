@@ -63,6 +63,7 @@ function PlanetModel({
   },
   clickedItem,
   hoveredItem,
+  lerping,
 }) {
   const planetRef = React.useRef();
   const xRadius = (id + 1) * eclipticLength;
@@ -71,6 +72,7 @@ function PlanetModel({
   return (
     <>
       <Planet
+        id={id}
         xRadius={xRadius}
         zRadius={zRadius}
         path={modelPath}
@@ -78,6 +80,8 @@ function PlanetModel({
         hasObliqueEcliptic={hasObliqueEcliptic}
         revolutionPeriodMultiplyFactor={revolutionPeriodMultiplyFactor}
         dayLengthMultiplyFactor={dayLengthMultiplyFactor}
+        clickedItem={clickedItem}
+        lerping={lerping}
       />
       <Ecliptic
         xRadius={xRadius}
@@ -91,30 +95,33 @@ function PlanetModel({
   );
 }
 
-function Sun() {
+function Sun({ clickedItem }) {
   return (
     <Planet
+      id={-1}
       xRadius={-1}
       zRadius={-1}
       path="./sun/scene.gltf"
       scale={sunScale}
       dayLengthMultiplyFactor={1.2}
+      clickedItem={clickedItem}
     />
   );
 }
 
-export default function SolarSystem({ clickedItem, hoveredItem }) {
+export default function SolarSystem({ clickedItem, hoveredItem, lerping }) {
   const [asteroidBelt, outerSpace] = asteroidBelts;
 
   return (
     <>
-      <Sun />
+      <Sun clickedItem={clickedItem} />
       {planets.map((planet) => (
         <PlanetModel
           planet={planet}
           key={planet.id}
           clickedItem={clickedItem}
           hoveredItem={hoveredItem}
+          lerping={lerping}
         />
       ))}
       <AsteroidBelt
@@ -127,7 +134,7 @@ export default function SolarSystem({ clickedItem, hoveredItem }) {
       />
       ;
       <Lights />
-      <OrbitControls />
+      <OrbitControls makeDefault />
       <Stars
         radius={220}
         count={2000}
