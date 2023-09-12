@@ -200,3 +200,11 @@ export const planetData = [
   "orbitInclination",
   "surfaceTemp",
 ];
+
+export const galaxyData = [
+  ["Galaxy type", "Barred spiral"],
+  ["Age", "13.6 billion years (and counting)"],
+  ["Size", "100,000 light-years across"],
+  ["Number of stars", "about 200 billion"],
+  ["Rotation time", "250 million years"],
+];

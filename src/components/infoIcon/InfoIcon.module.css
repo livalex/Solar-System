@@ -1,0 +1,17 @@
+.container {
+  position: fixed;
+  top: 0.5rem;
+  right: 1rem;
+  z-index: 1;
+  background: rgba(25, 25, 25, 0);
+  border: 0;
+}
+
+.container:hover {
+  cursor: pointer;
+}
+
+.icon {
+  width: 1.8rem;
+  height: 1.8rem;
+}

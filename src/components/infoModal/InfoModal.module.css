@@ -1,0 +1,48 @@
+.container {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  background-color: rgba(50, 50, 50, 0.9);
+  z-index: 3;
+  padding: 1rem;
+  border: 1px solid rgba(80, 80, 80, 0.9);
+}
+
+.close-button {
+  position: relative;
+  color: white;
+  border: 2px solid rgba(100, 163, 175, 0.75);
+  font-size: 1.25rem;
+  background-color: transparent;
+  padding: 0.85em 1em;
+}
+
+.close-button:hover {
+  border: 2px solid #64a3af;
+  cursor: pointer;
+}
+
+.section-head {
+  padding: 0;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.data {
+  font-size: 1rem;
+  color: #f9f6ee;
+  margin-bottom: 1rem;
+}
+
+td {
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .container {
+    top: 25%;
+    left: 25%;
+    right: 25%;
+  }
+}
