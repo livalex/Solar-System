@@ -65,7 +65,6 @@ function PlanetModel({
   hoveredItem,
   lerping,
 }) {
-  const planetRef = React.useRef();
   const xRadius = (id + 1) * eclipticLength;
   const zRadius = (id + 1) * eclipticWidth;
 
@@ -132,7 +131,6 @@ export default function SolarSystem({ clickedItem, hoveredItem, lerping }) {
         ellipseStartPoint={outerSpace.ellipseStartPoint}
         ellipseWidthFactor={outerSpace.ellipseWidthFactor}
       />
-      ;
       <Lights />
       <OrbitControls makeDefault />
       <Stars

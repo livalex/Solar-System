@@ -1,0 +1,8 @@
+.title {
+  position: fixed;
+  top: 1rem;
+  font-size: 42px;
+  background: transparent;
+  width: 100vw;
+  text-align: center;
+}

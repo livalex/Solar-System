@@ -10,15 +10,17 @@ const PlanetsTable = ({
   setClickedItem,
   setHoveredItem,
   setLerping,
+  setTitle,
 }) => {
   const [isToggled, setIsToggled] = useState(false);
 
-  const clickHandler = (id) => {
+  const clickHandler = (id, name) => {
     if (clickedItem === id) {
       setClickedItem(null);
     } else {
       setClickedItem(id);
       setLerping(true);
+      setTitle(name);
     }
   };
 
@@ -41,7 +43,7 @@ const PlanetsTable = ({
         {planets.map((planet) => (
           <React.Fragment key={`${planet.id}-${planet.name}`}>
             <li
-              onClick={() => clickHandler(planet.id)}
+              onClick={() => clickHandler(planet.id, planet.name)}
               onMouseEnter={() => setHoveredItem(planet.id)}
               onMouseLeave={() => setHoveredItem(null)}
               className={clickedItem === planet.id ? classes.selected : ""}

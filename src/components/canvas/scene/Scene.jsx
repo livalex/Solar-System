@@ -1,9 +1,11 @@
+import { Suspense } from "react";
 import { cameraPos } from "../../../config/constants";
 import SolarSystem from "../solarSystem/SolarSystem";
 import classes from "./Scene.module.css";
 import { Canvas } from "@react-three/fiber";
+import CanvasLoader from "../canvasLoader/CanvasLoader";
 
-const Scene = ({ clickedItem, hoveredItem, lerping, setLerping }) => {
+const Scene = ({ clickedItem, hoveredItem, lerping, setLerping, setTitle }) => {
   return (
     <div className={classes.background}>
       <Canvas
@@ -16,11 +18,14 @@ const Scene = ({ clickedItem, hoveredItem, lerping, setLerping }) => {
         onPointerDown={() => setLerping(false)}
         onWheel={() => setLerping(false)}
       >
-        <SolarSystem
-          clickedItem={clickedItem}
-          hoveredItem={hoveredItem}
-          lerping={lerping}
-        />
+        <Suspense fallback={<CanvasLoader />}>
+          <SolarSystem
+            clickedItem={clickedItem}
+            hoveredItem={hoveredItem}
+            lerping={lerping}
+            setTitle={setTitle}
+          />
+        </Suspense>
       </Canvas>
     </div>
   );

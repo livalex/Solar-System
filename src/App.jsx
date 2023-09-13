@@ -7,12 +7,15 @@ import InfoModal from "./components/infoModal/InfoModal";
 import PortalHoc from "./components/PortalHoc";
 import Backdrop from "./components/backdrop/Backdrop";
 import FadeBackdrop from "./components/fadeBackdrop/FadeBackdrop";
+import Title from "./components/title/Title";
+import Fade from "@material-ui/core/Fade";
 
 function App() {
   const [clickedItem, setClickedItem] = useState(undefined);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [lerping, setLerping] = useState(false);
   const [isInfoClicked, setIsInfoClicked] = useState(false);
+  const [title, setTitle] = useState("Solar System");
   const [initialRender, orientation] = useDetectOrientation();
 
   useEffect(() => {
@@ -28,9 +31,11 @@ function App() {
         setClickedItem={setClickedItem}
         setHoveredItem={setHoveredItem}
         setLerping={setLerping}
+        setTitle={setTitle}
       />
       <InfoIcon setIsInfoClicked={setIsInfoClicked} />
       <FadeBackdrop />
+      <Title title={title} />
       {isInfoClicked && (
         <PortalHoc>
           <Backdrop setIsInfoClicked={setIsInfoClicked} />
