@@ -4,7 +4,7 @@
   left: 10%;
   right: 10%;
   background-color: rgba(50, 50, 50, 0.9);
-  z-index: 3;
+  z-index: 4;
   padding: 1rem;
   border: 1px solid rgba(80, 80, 80, 0.9);
 }

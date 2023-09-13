@@ -6,6 +6,7 @@ import InfoIcon from "./components/infoIcon/InfoIcon";
 import InfoModal from "./components/infoModal/InfoModal";
 import PortalHoc from "./components/PortalHoc";
 import Backdrop from "./components/backdrop/Backdrop";
+import FadeBackdrop from "./components/fadeBackdrop/FadeBackdrop";
 
 function App() {
   const [clickedItem, setClickedItem] = useState(undefined);
@@ -29,6 +30,7 @@ function App() {
         setLerping={setLerping}
       />
       <InfoIcon setIsInfoClicked={setIsInfoClicked} />
+      <FadeBackdrop />
       {isInfoClicked && (
         <PortalHoc>
           <Backdrop setIsInfoClicked={setIsInfoClicked} />
