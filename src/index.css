@@ -5,9 +5,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Rajdhani", sans-serif;
-  font-size: 1.02rem;
   scroll-behavior: smooth;
   color-scheme: dark;
+}
+
+*:not(h1) {
+  font-size: 1.02rem;
 }
 
 html {

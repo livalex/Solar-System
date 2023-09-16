@@ -6,10 +6,9 @@ import InfoIcon from "./components/infoIcon/InfoIcon";
 import InfoModal from "./components/infoModal/InfoModal";
 import PortalHoc from "./components/PortalHoc";
 import Backdrop from "./components/backdrop/Backdrop";
-import FadeBackdrop from "./components/fadeBackdrop/FadeBackdrop";
 import Title from "./components/title/Title";
-import Fade from "@material-ui/core/Fade";
 import LinkedInProfileCard from "./components/linkedInProfileCard/LinkedInProfileCard";
+import LoadingPage from "./components/LoadingPage/LoadingPage";
 
 function App() {
   const [clickedItem, setClickedItem] = useState(undefined);
@@ -35,9 +34,9 @@ function App() {
         setTitle={setTitle}
       />
       <InfoIcon setIsInfoClicked={setIsInfoClicked} />
-      <FadeBackdrop />
       <Title title={title} />
       <LinkedInProfileCard />
+      <LoadingPage />
       {isInfoClicked && (
         <PortalHoc>
           <Backdrop setIsInfoClicked={setIsInfoClicked} />

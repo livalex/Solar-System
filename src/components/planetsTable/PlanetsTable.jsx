@@ -4,6 +4,7 @@ import { planetData, planets, variableToNameMap } from "../../config/constants";
 import "react-slidedown/lib/slidedown.css";
 import { DropdownHoc } from "../DropdownHoc";
 import ToggleIcon from "../toggle/ToggleIcon";
+import { useProgress } from "@react-three/drei";
 
 const PlanetsTable = ({
   clickedItem,
@@ -12,6 +13,7 @@ const PlanetsTable = ({
   setLerping,
   setTitle,
 }) => {
+  const { progress } = useProgress();
   const [isToggled, setIsToggled] = useState(false);
 
   const clickHandler = (id, name) => {
