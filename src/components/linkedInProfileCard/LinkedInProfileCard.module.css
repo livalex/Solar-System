@@ -1,8 +1,6 @@
 .connect-button {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
   height: 1.25rem;
+  width: 8rem;
   padding: 1px 12px 1px 12px;
   background-color: #00a0dc;
   border-radius: 10px;
@@ -12,6 +10,12 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
+}
+
+.scene {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
 }
 
 .logo {

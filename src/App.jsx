@@ -8,7 +8,7 @@ import PortalHoc from "./components/PortalHoc";
 import Backdrop from "./components/backdrop/Backdrop";
 import Title from "./components/title/Title";
 import LinkedInProfileCard from "./components/linkedInProfileCard/LinkedInProfileCard";
-import LoadingPage from "./components/LoadingPage/LoadingPage";
+import AboutPage from "./components/AboutPage/AboutPage";
 
 function App() {
   const [clickedItem, setClickedItem] = useState(undefined);
@@ -16,6 +16,7 @@ function App() {
   const [lerping, setLerping] = useState(false);
   const [isInfoClicked, setIsInfoClicked] = useState(false);
   const [title, setTitle] = useState("Solar System");
+  const [isLoadingBarVisible, setIsLoadingBarVisible] = useState(false);
   const [initialRender, orientation] = useDetectOrientation();
 
   useEffect(() => {
@@ -35,20 +36,25 @@ function App() {
       />
       <InfoIcon setIsInfoClicked={setIsInfoClicked} />
       <Title title={title} />
-      <LinkedInProfileCard />
-      <LoadingPage />
+      <LinkedInProfileCard scene />
+      <AboutPage
+        isLoadingBarVisible={isLoadingBarVisible}
+        setIsLoadingBarVisible={setIsLoadingBarVisible}
+      />
       {isInfoClicked && (
         <PortalHoc>
           <Backdrop setIsInfoClicked={setIsInfoClicked} />
           <InfoModal setIsInfoClicked={setIsInfoClicked} />
         </PortalHoc>
       )}
-      <Scene
-        clickedItem={clickedItem}
-        hoveredItem={hoveredItem}
-        lerping={lerping}
-        setLerping={setLerping}
-      />
+      {isLoadingBarVisible && (
+        <Scene
+          clickedItem={clickedItem}
+          hoveredItem={hoveredItem}
+          lerping={lerping}
+          setLerping={setLerping}
+        />
+      )}
     </>
   );
 }

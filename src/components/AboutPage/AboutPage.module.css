@@ -13,7 +13,8 @@
   text-transform: uppercase;
   letter-spacing: 0.25rem;
   text-align: center;
-  padding-top: 2.5rem;
+  padding-top: 5rem;
+  font-size: 1.2rem;
 }
 
 .loading-text {
@@ -26,6 +27,33 @@
 
 .progress-bar {
   margin-top: 1rem;
+}
+
+.info {
+  width: 70%;
+  margin: 0.4rem auto;
+}
+
+p {
+  margin-top: 1rem;
+  line-height: 1.5rem;
+  font-size: 0.9rem !important;
+}
+
+.button,
+.card {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.close-button {
+  color: white;
+  border: 2px solid rgba(100, 163, 175, 0.75);
+  font-size: 1.25rem;
+  background-color: transparent;
+  padding: 0.85em 1em;
+  cursor: pointer;
 }
 
 .fade-effect {
@@ -66,5 +94,25 @@
   100% {
     opacity: 0;
     display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .intro-heading {
+    font-size: 2rem;
+  }
+
+  .info {
+    width: 60%;
+    margin: 1rem auto;
+  }
+
+  p {
+    font-size: 1.25rem !important;
+  }
+
+  .button,
+  .card {
+    margin-top: 2rem;
   }
 }
