@@ -133,7 +133,14 @@ export default function SolarSystem({ clickedItem, hoveredItem, lerping }) {
       />
       <Lights />
       <OrbitControls makeDefault />
-      <Stars radius={220} count={2000} factor={4} saturation={0} speed={1} />
+      <Stars
+        radius={220}
+        count={2000}
+        factor={4}
+        saturation={0}
+        speed={1}
+        fade
+      />
     </>
   );
 }

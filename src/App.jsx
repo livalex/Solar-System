@@ -11,6 +11,11 @@ import LinkedInProfileCard from "./components/linkedInProfileCard/LinkedInProfil
 import AboutPage from "./components/AboutPage/AboutPage";
 
 function App() {
+  // porbleme pe info modal pe landscape
+  // cand se deschide tabelul pe landscape nu incape in ecran
+  // invarte centura de asteorizi
+  // alte optimizari prin cod
+
   const [clickedItem, setClickedItem] = useState(undefined);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [lerping, setLerping] = useState(false);

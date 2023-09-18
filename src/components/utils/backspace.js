@@ -1,5 +1,3 @@
-let humanize = Math.round(Math.random() * 100 + 20);
-
 function backspace(id, intrvl) {
   let word = document.getElementById(id).textContent;
   let wordLength = word.length;
