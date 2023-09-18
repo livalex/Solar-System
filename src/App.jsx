@@ -14,6 +14,7 @@ function App() {
   // porbleme pe info modal pe landscape
   // cand se deschide tabelul pe landscape nu incape in ecran
   // invarte centura de asteorizi
+  // vezi ce faci cu useState urile astea
   // alte optimizari prin cod
 
   const [clickedItem, setClickedItem] = useState(undefined);
