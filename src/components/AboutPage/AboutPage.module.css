@@ -1,3 +1,4 @@
+/* phone */
 .container {
   position: fixed;
   top: 0;
@@ -13,7 +14,7 @@
   text-transform: uppercase;
   letter-spacing: 0.25rem;
   text-align: center;
-  padding-top: 5rem;
+  padding-top: 2.5rem;
   font-size: 1.2rem;
 }
 
@@ -26,14 +27,14 @@
   margin: 0.4rem auto;
 }
 
-p {
+.paragraph {
   margin-top: 1rem;
-  line-height: 1.5rem;
-  font-size: 0.9rem !important;
+  line-height: 1.2rem;
+  font-size: 0.9rem;
 }
 
 .technology {
-  font-size: 0.9rem !important;
+  font-size: 0.9rem;
   color: #2199e8;
 }
 
@@ -41,7 +42,7 @@ p {
 .card {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 1.3rem;
 }
 
 .fade-out {
@@ -101,22 +102,25 @@ p {
   }
 }
 
+/* computer */
 @media (min-width: 640px) {
   .intro-heading {
     font-size: 2rem;
+    padding-top: 4.5rem;
   }
 
   .info {
-    width: 60%;
+    width: 55%;
     margin: 1rem auto;
   }
 
-  p {
-    font-size: 1.25rem !important;
+  .paragraph {
+    line-height: 1.6rem;
+    font-size: 1.2rem;
   }
 
   .technology {
-    font-size: 1.25rem !important;
+    font-size: 1.2rem;
   }
 
   .button,
@@ -125,9 +129,10 @@ p {
   }
 }
 
-@media (orientation: landscape) {
+/* phone landscape */
+@media (max-height: 420px) and (max-width: 1000px) and (orientation: landscape) {
   .intro-heading {
-    padding-top: 2rem;
+    padding-top: 1.8rem;
     font-size: 1rem;
   }
 
@@ -136,14 +141,14 @@ p {
     margin: 0.2rem auto;
   }
 
-  p {
-    margin-top: 0.6rem;
-    line-height: 1.1rem;
-    font-size: 0.9rem !important;
+  .paragraph {
+    margin-top: 0.4rem;
+    line-height: 1rem;
+    font-size: 0.9rem;
   }
 
   .technology {
-    font-size: 0.9rem !important;
+    font-size: 0.9rem;
     color: #2199e8;
   }
 
@@ -151,6 +156,6 @@ p {
   .card {
     display: flex;
     justify-content: center;
-    margin-top: 0.8rem;
+    margin-top: 1rem;
   }
 }

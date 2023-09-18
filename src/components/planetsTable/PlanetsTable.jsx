@@ -13,7 +13,6 @@ const PlanetsTable = ({
   setLerping,
   setTitle,
 }) => {
-  const { progress } = useProgress();
   const [isToggled, setIsToggled] = useState(false);
 
   const clickHandler = (id, name) => {

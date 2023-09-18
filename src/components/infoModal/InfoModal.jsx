@@ -11,8 +11,8 @@ const InfoModal = ({ setIsInfoClicked }) => {
           <tbody>
             {galaxyData.map((data) => (
               <tr key={data[0]}>
-                <td>{data[0]}</td>
-                <td>{data[1]}</td>
+                <td className={classes["tabel-data"]}>{data[0]}</td>
+                <td className={classes["tabel-data"]}>{data[1]}</td>
               </tr>
             ))}
           </tbody>

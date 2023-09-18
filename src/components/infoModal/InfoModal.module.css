@@ -25,7 +25,7 @@
   margin-bottom: 1rem;
 }
 
-td {
+.tabel-data {
   padding: 0;
 }
 
@@ -34,5 +34,27 @@ td {
     top: 25%;
     left: 25%;
     right: 25%;
+  }
+}
+
+/* phone landscape */
+@media (max-height: 420px) and (max-width: 1000px) and (orientation: landscape) {
+  .container {
+    top: 5%;
+    left: 5%;
+    width: 90%;
+  }
+
+  .data {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .tabel-data {
+    font-size: 0.8rem;
+  }
+
+  .section-head {
+    font-size: 1.2rem;
   }
 }

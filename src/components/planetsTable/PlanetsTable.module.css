@@ -78,3 +78,42 @@ table {
     display: block;
   }
 }
+
+/* phone landscape */
+@media (max-height: 420px) and (max-width: 1000px) and (orientation: landscape) {
+  .table {
+    top: 1.5rem;
+    left: -15rem;
+  }
+
+  .opened-table {
+    left: 0.5rem;
+  }
+
+  ul li:first-child {
+    font-size: 0.65rem;
+    height: 1.45rem;
+    padding-bottom: 1.2rem;
+  }
+
+  ul li:not(:first-child) {
+    font-size: 0.65rem;
+    height: 1.45rem;
+  }
+
+  .table-data {
+    font-size: 0.55rem;
+  }
+
+  .details {
+    padding: 0.1rem 0rem 0.1rem 1rem;
+  }
+
+  .plus-icon {
+    bottom: 0.15rem;
+  }
+
+  .minus-icon {
+    bottom: 0.1rem;
+  }
+}

@@ -10,3 +10,20 @@
     display: none;
   }
 }
+
+/* phone landscape */
+@media (max-height: 420px) and (max-width: 1000px) and (orientation: landscape) {
+  .container {
+    left: 0.5rem;
+    top: 0.2rem;
+  }
+
+  .icon {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+
+  .container {
+    display: block;
+  }
+}

@@ -15,3 +15,16 @@
   width: 1.8rem;
   height: 1.8rem;
 }
+
+/* phone landscape */
+@media (max-height: 420px) and (max-width: 1000px) and (orientation: landscape) {
+  .container {
+    top: 0.2rem;
+    right: 0.3rem;
+  }
+
+  .icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}

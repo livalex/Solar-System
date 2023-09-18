@@ -10,3 +10,10 @@
   border: 2px solid #64a3af;
   cursor: pointer;
 }
+
+/* phone landscape */
+@media (max-height: 420px) and (max-width: 1000px) and (orientation: landscape) {
+  .button {
+    font-size: 1rem;
+  }
+}

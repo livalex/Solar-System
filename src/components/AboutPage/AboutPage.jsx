@@ -40,7 +40,7 @@ const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
             <h1>our solar system</h1>
           </div>
           <div className={classes.info}>
-            <p id="solarSystem">
+            <p className={classes.paragraph} id="solarSystem">
               A solar system encompasses a star and its accompanying celestial
               bodies that revolve around it. Ours, for instance, comprises the
               sun, eight planets (along with their moons), dwarf planets,
@@ -48,7 +48,7 @@ const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
               Way Galaxy, our solar system is positioned approximately 27,000
               light-years distant from the center of the Milky Way Galaxy.
             </p>
-            <p id="technologies">
+            <p className={classes.paragraph} id="technologies">
               This project leverages{" "}
               <span className={classes.technology}>Three.js</span>,{" "}
               <span className={classes.technology}>React Three Fiber</span>, and{" "}
@@ -57,7 +57,7 @@ const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
               eight planets (or nine, if you classify Pluto as a planet), the
               asteroid belt, and an array of thousands of stars.
             </p>
-            <p id="recommendation">
+            <p className={classes.paragraph} id="recommendation">
               To enhance your viewing enjoyment, we recommend using a laptop or
               desktop computer equipped with the most up-to-date versions of
               either Google Chrome or Safari Technology Preview.
