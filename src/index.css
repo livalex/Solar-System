@@ -21,3 +21,9 @@ html {
 body {
   letter-spacing: 0.02rem;
 }
+
+.scene-card {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}

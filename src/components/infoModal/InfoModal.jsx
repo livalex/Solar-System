@@ -1,4 +1,5 @@
 import { galaxyData } from "../../config/constants";
+import Button from "../button/Button";
 import classes from "./InfoModal.module.css";
 
 const InfoModal = ({ setIsInfoClicked }) => {
@@ -27,12 +28,11 @@ const InfoModal = ({ setIsInfoClicked }) => {
           drag gesture, or a swipe.
         </p>
       </section>
-      <button
+      <Button
         className={classes["close-button"]}
         onClick={() => setIsInfoClicked(false)}
-      >
-        Close
-      </button>
+        text="Close"
+      />
     </div>
   );
 };

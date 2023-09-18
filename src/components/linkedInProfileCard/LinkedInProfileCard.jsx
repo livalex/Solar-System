@@ -1,14 +1,10 @@
 import classes from "./LinkedInProfileCard.module.css";
 import logo from "../../assets/linkedin.svg";
 
-const LinkedInProfileCard = ({ scene = false }) => {
-  const anchorClasses = scene
-    ? `${classes["connect-button"]} ${classes.scene}`
-    : classes["connect-button"];
-
+const LinkedInProfileCard = ({ className }) => {
   return (
     <a
-      className={anchorClasses}
+      className={`${classes["connect-button"]} ${className}`}
       href="https://www.linkedin.com/in/alexandru-livadaru/"
       target="_blank"
     >

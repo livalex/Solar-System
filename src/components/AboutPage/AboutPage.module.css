@@ -47,22 +47,29 @@ p {
   margin-top: 1rem;
 }
 
-.close-button {
-  color: white;
-  border: 2px solid rgba(100, 163, 175, 0.75);
-  font-size: 1.25rem;
-  background-color: transparent;
-  padding: 0.85em 1em;
-  cursor: pointer;
+.fade-out {
+  animation: fadeOutAnimation 1.5s ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
-.fade-effect {
-  animation-name: fade;
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+.page-fade-effect {
+  animation-name: pageFade;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
 
-@keyframes fade {
+@keyframes pageFade {
   0% {
     opacity: 1;
   }

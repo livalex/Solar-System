@@ -9,6 +9,8 @@ import LinearProgress, {
 import { Stack } from "@mui/material";
 import FadeBackdrop from "../fadeBackdrop/FadeBackdrop";
 import LinkedInProfileCard from "../linkedInProfileCard/LinkedInProfileCard";
+import { deleteText } from "../utils/backspace";
+import Button from "../button/Button";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 15,
@@ -38,10 +40,22 @@ const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
   const { progress } = useProgress();
   const [containerClasses, setContainerClasses] = useState(classes.container);
   const [isBackdropVisible, setIsBackdropVisible] = useState(false);
+  const [isFadeOutTrue, setIsFadeOutTrue] = useState(false);
+  const paragraphs = ["recommendation", "technologies", "solarSystem"];
+
+  const clickHandler = () => {
+    setIsFadeOutTrue(true);
+    paragraphs.forEach((p) => deleteText(p));
+    setTimeout(() => {
+      setIsLoadingBarVisible(true);
+    }, "1500");
+  };
 
   useEffect(() => {
     if (progress >= 100) {
-      setContainerClasses(`${classes.container} ${classes["fade-effect"]}`);
+      setContainerClasses(
+        `${classes.container} ${classes["page-fade-effect"]}`
+      );
       setIsBackdropVisible(true);
     }
   }, [progress]);
@@ -54,7 +68,7 @@ const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
             <h1>our solar system</h1>
           </div>
           <div className={classes.info}>
-            <p>
+            <p id="solarSystem">
               A solar system encompasses a star and its accompanying celestial
               bodies that revolve around it. Ours, for instance, comprises the
               sun, eight planets (along with their moons), dwarf planets,
@@ -62,30 +76,32 @@ const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
               Way Galaxy, our solar system is positioned approximately 27,000
               light-years distant from the center of the Milky Way Galaxy.
             </p>
-            <p>
+            <p id="technologies">
               This project leverages Three.js, React Three Fiber, and React Drei
               as its driving technologies. The current scene displays the sun,
               all eight planets (or nine, if you classify Pluto as a planet),
               the asteroid belt, and an array of thousands of stars.
             </p>
-            <p>
+            <p id="recommendation">
               To enhance your viewing enjoyment, we recommend using a laptop or
               desktop computer equipped with the most up-to-date versions of
               either Google Chrome or Safari Technology Preview.
             </p>
           </div>
+
+          <div className={classes.card}>
+            <LinkedInProfileCard
+              className={isFadeOutTrue && classes["fade-out"]}
+            />
+          </div>
+          <div className={classes.button}>
+            <Button
+              onClick={clickHandler}
+              className={isFadeOutTrue && classes["fade-out"]}
+              text="View Scene"
+            />
+          </div>
         </section>
-        <div className={classes.card}>
-          <LinkedInProfileCard />
-        </div>
-        <div className={classes.button}>
-          <button
-            className={classes["close-button"]}
-            onClick={() => setIsLoadingBarVisible(true)}
-          >
-            View Scene
-          </button>
-        </div>
         {isLoadingBarVisible && (
           <>
             <div className={classes["loading-text"]}>Loading the scene...</div>

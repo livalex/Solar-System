@@ -36,7 +36,7 @@ function App() {
       />
       <InfoIcon setIsInfoClicked={setIsInfoClicked} />
       <Title title={title} />
-      <LinkedInProfileCard scene />
+      <LinkedInProfileCard className="scene-card" />
       <AboutPage
         isLoadingBarVisible={isLoadingBarVisible}
         setIsLoadingBarVisible={setIsLoadingBarVisible}
