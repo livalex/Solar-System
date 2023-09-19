@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import classes from "./PlanetsTable.module.css";
 import { planetData, planets, variableToNameMap } from "../../config/constants";
 import "react-slidedown/lib/slidedown.css";
-import { DropdownHoc } from "../DropdownHoc";
+import DropdownHoc from "../DropdownHoc";
 import ToggleIcon from "../toggle/ToggleIcon";
-import { useProgress } from "@react-three/drei";
 
 const PlanetsTable = ({
   clickedItem,
@@ -77,4 +76,4 @@ const PlanetsTable = ({
   );
 };
 
-export default PlanetsTable;
+export default React.memo(PlanetsTable);

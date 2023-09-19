@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./LinkedInProfileCard.module.css";
 import logo from "../../assets/linkedin.svg";
 
@@ -14,4 +15,4 @@ const LinkedInProfileCard = ({ className }) => {
   );
 };
 
-export default LinkedInProfileCard;
+export default React.memo(LinkedInProfileCard);

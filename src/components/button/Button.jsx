@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./Button.module.css";
 
 const Button = ({ className, onClick, text }) => {
@@ -8,4 +9,4 @@ const Button = ({ className, onClick, text }) => {
   );
 };
 
-export default Button;
+export default React.memo(Button);

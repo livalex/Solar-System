@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./ToggleIcon.module.css";
 import close from "../../assets/menu.svg";
 import menu from "../../assets/close.svg";
@@ -20,4 +20,4 @@ const ToggleIcon = ({ isToggled, setIsToggled }) => {
   );
 };
 
-export default ToggleIcon;
+export default React.memo(ToggleIcon);

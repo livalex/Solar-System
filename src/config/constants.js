@@ -208,3 +208,11 @@ export const galaxyData = [
   ["Number of stars", "about 200 billion"],
   ["Rotation time", "250 million years"],
 ];
+
+// action types
+export const CLICK_ITEM = "CLICK_ITEM";
+export const HOVER_ITEM = "HOVER_ITEM";
+export const LERP_CAMERA = "LERP_CAMERA";
+export const CLICK_INFO = "CLICK_INFO";
+export const CHANGE_TITLE = "CHANGE_TITLE";
+export const SHOW_BAR = "SHOW_BAR";

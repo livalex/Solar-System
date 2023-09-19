@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import React from "react";
 import { cameraPos } from "../../../config/constants";
 import SolarSystem from "../solarSystem/SolarSystem";
 import classes from "./Scene.module.css";
@@ -28,4 +28,4 @@ const Scene = ({ clickedItem, hoveredItem, lerping, setLerping, setTitle }) => {
   );
 };
 
-export default Scene;
+export default React.memo(Scene);

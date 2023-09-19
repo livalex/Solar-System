@@ -1,3 +1,4 @@
+import React from "react";
 import { galaxyData } from "../../config/constants";
 import Button from "../button/Button";
 import classes from "./InfoModal.module.css";
@@ -37,4 +38,4 @@ const InfoModal = ({ setIsInfoClicked }) => {
   );
 };
 
-export default InfoModal;
+export default React.memo(InfoModal);

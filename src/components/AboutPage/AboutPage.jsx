@@ -84,4 +84,4 @@ const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
   );
 };
 
-export default AboutPage;
+export default React.memo(AboutPage);

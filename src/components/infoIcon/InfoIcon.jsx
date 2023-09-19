@@ -1,3 +1,4 @@
+import React from "react";
 import info from "../../assets/info.svg";
 import classes from "./InfoIcon.module.css";
 
@@ -19,4 +20,4 @@ const InfoIcon = ({ setIsInfoClicked }) => {
   );
 };
 
-export default InfoIcon;
+export default React.memo(InfoIcon);

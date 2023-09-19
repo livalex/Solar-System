@@ -1,3 +1,4 @@
+import React from "react";
 import { createPortal } from "react-dom";
 
 const PortalHoc = ({ children }) => {
@@ -6,4 +7,4 @@ const PortalHoc = ({ children }) => {
   return createPortal(children, mountPoint);
 };
 
-export default PortalHoc;
+export default React.memo(PortalHoc);

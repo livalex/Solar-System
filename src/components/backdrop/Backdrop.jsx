@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./Backdrop.module.css";
 
 const Backdrop = ({ setIsInfoClicked }) => {
@@ -6,4 +7,4 @@ const Backdrop = ({ setIsInfoClicked }) => {
   );
 };
 
-export default Backdrop;
+export default React.memo(Backdrop);

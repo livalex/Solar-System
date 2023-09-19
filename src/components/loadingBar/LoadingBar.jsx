@@ -48,4 +48,4 @@ const LoadingBar = ({ progress }) => {
   );
 };
 
-export default LoadingBar;
+export default React.memo(LoadingBar);

@@ -108,7 +108,7 @@ function Sun({ clickedItem }) {
   );
 }
 
-export default function SolarSystem({ clickedItem, hoveredItem, lerping }) {
+function SolarSystem({ clickedItem, hoveredItem, lerping }) {
   const [asteroidBelt, outerSpace] = asteroidBelts;
 
   return (
@@ -148,3 +148,5 @@ export default function SolarSystem({ clickedItem, hoveredItem, lerping }) {
     </>
   );
 }
+
+export default React.memo(SolarSystem);
