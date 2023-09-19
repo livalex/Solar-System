@@ -124,10 +124,14 @@ export default function SolarSystem({ clickedItem, hoveredItem, lerping }) {
         />
       ))}
       <AsteroidBelt
+        id={0}
+        clickedItem={clickedItem}
         ellipseStartPoint={asteroidBelt.ellipseStartPoint}
         ellipseWidthFactor={asteroidBelt.ellipseWidthFactor}
       />
       <AsteroidBelt
+        id={1}
+        clickedItem={clickedItem}
         ellipseStartPoint={outerSpace.ellipseStartPoint}
         ellipseWidthFactor={outerSpace.ellipseWidthFactor}
       />

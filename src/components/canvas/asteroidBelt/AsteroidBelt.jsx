@@ -1,8 +1,15 @@
 import { Points, PointMaterial } from "@react-three/drei";
-import React from "react";
+import { useFrame } from "@react-three/fiber";
+import React, { useRef } from "react";
 
-const AsteroidBelt = ({ ellipseStartPoint, ellipseWidthFactor }) => {
+const AsteroidBelt = ({
+  id,
+  clickedItem,
+  ellipseStartPoint,
+  ellipseWidthFactor,
+}) => {
   const points = [];
+  const ref = useRef();
 
   for (let i = 0; i < 5000; i++) {
     const angle = Math.random() * Math.PI * 2;
@@ -17,17 +24,27 @@ const AsteroidBelt = ({ ellipseStartPoint, ellipseWidthFactor }) => {
     points.push(x, 0, y);
   }
 
+  useFrame(({ clock }, delta) => {
+    if (clickedItem === undefined) {
+      // do not delete clock
+      ref.current.rotation.y += id ? delta / 100 : delta + 0.002;
+    }
+  });
+
   return (
     // stride = Min distance between previous and current point
-    <Points positions={new Float32Array(points)} stride={3}>
-      <PointMaterial
-        transparent
-        color="#f272c8"
-        size={0.002}
-        sizeAttenuation={true}
-        depthWrite={false}
-      />
-    </Points>
+    // group is used in the useFrame to rotate the points
+    <group>
+      <Points ref={ref} positions={new Float32Array(points)} stride={3}>
+        <PointMaterial
+          transparent
+          color="#f272c8"
+          size={0.002}
+          sizeAttenuation={true}
+          depthWrite={false}
+        />
+      </Points>
+    </group>
   );
 };
 
