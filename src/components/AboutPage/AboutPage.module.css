@@ -38,6 +38,11 @@
   color: #2199e8;
 }
 
+.usage {
+  font-size: 0.9rem;
+  color: #e82121;
+}
+
 .button,
 .card {
   display: flex;
@@ -119,7 +124,8 @@
     font-size: 1.2rem;
   }
 
-  .technology {
+  .technology,
+  .usage {
     font-size: 1.2rem;
   }
 
@@ -150,6 +156,11 @@
   .technology {
     font-size: 0.9rem;
     color: #2199e8;
+  }
+
+  .usage {
+    font-size: 0.9rem;
+    color: #e82121;
   }
 
   .button,

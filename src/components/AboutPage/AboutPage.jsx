@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useProgress } from "@react-three/drei";
+import { isDesktop } from "react-device-detect";
 import FadeBackdrop from "../fadeBackdrop/FadeBackdrop";
 import LinkedInProfileCard from "../linkedInProfileCard/LinkedInProfileCard";
 import { deleteText } from "../utils/backspace";
@@ -44,9 +45,9 @@ const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
               A solar system encompasses a star and its accompanying celestial
               bodies that revolve around it. Ours, for instance, comprises the
               sun, eight planets (along with their moons), dwarf planets,
-              asteroids, and comets. Situated within the Orion Arm of the Milky
-              Way Galaxy, our solar system is positioned approximately 27,000
-              light-years distant from the center of the Milky Way Galaxy.
+              asteroids, and comets. Our solar system is positioned
+              approximately 27,000 light-years distant from the center of the
+              Milky Way Galaxy.
             </p>
             <p className={classes.paragraph} id="technologies">
               This project leverages{" "}
@@ -58,9 +59,14 @@ const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
               asteroid belt, and an array of thousands of stars.
             </p>
             <p className={classes.paragraph} id="recommendation">
-              To enhance your viewing enjoyment, we recommend using a laptop or
-              desktop computer equipped with the most up-to-date versions of
-              either Google Chrome or Safari Technology Preview.
+              <span className={classes.usage}>
+                Use a laptop or desktop computer
+              </span>{" "}
+              equipped with the most up-to-date versions of either Google Chrome
+              or Safari Technology Preview.{" "}
+              <span className={classes.usage}>Mobile</span> version is currently
+              <span className={classes.usage}> not supported</span> due to the
+              size of the 3D models.
             </p>
           </div>
 
@@ -73,7 +79,7 @@ const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
             <Button
               onClick={clickHandler}
               className={isFadeOutTrue && classes["fade-out"]}
-              text="View Scene"
+              text={isDesktop ? "View Scene" : "Use laptop / desktop"}
             />
           </div>
         </section>
