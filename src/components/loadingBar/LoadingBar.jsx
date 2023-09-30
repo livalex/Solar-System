@@ -35,7 +35,7 @@ const ProgressBar = ({ progress }) => {
 const LoadingBar = ({ progress }) => {
   return (
     <>
-      {/* <ProgressBar progress={progress} /> */}
+      <ProgressBar progress={progress} />
       <div className={classes["loading-text"]}>
         <TypeIt
           options={{
