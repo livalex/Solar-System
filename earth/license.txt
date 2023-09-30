@@ -1,11 +1,11 @@
 Model Information:
-* title:	(FREE) 3D Earth Model
-* source:	https://sketchfab.com/3d-models/free-3d-earth-model-439de097307b4a37ac626a2a5f990e81
-* author:	hishamhamid (https://sketchfab.com/hishamhamid)
+* title:	Earth
+* source:	https://sketchfab.com/3d-models/earth-5f9c35be31a047928eace8b415a8ee3a
+* author:	AirStudios (https://sketchfab.com/sebbe613)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "(FREE) 3D Earth Model" (https://sketchfab.com/3d-models/free-3d-earth-model-439de097307b4a37ac626a2a5f990e81) by hishamhamid (https://sketchfab.com/hishamhamid) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Earth" (https://sketchfab.com/3d-models/earth-5f9c35be31a047928eace8b415a8ee3a) by AirStudios (https://sketchfab.com/sebbe613) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
