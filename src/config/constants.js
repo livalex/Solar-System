@@ -74,7 +74,7 @@ export let planets = [
   {
     id: 4,
     name: "Jupiter",
-    size: window.matchMedia("(min-width: 640px)").matches ? 1.4 : 0.5,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.08 : 0.027,
     modelPath: "./jupiter/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1.2,

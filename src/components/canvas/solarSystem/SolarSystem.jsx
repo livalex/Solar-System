@@ -9,7 +9,7 @@ import {
   sunScale,
 } from "../../../config/constants";
 import Planet from "../Planet";
-import AsteroidBelt from "../asteroidBelt/AsteroidBelt";
+import AsteroidBelt from "../AsteroidBelt";
 
 function Ecliptic({
   xRadius = 1,
