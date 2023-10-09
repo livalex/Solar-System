@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { cameraPos } from "../../../config/constants";
 import SolarSystem from "../solarSystem/SolarSystem";
 import classes from "./Scene.module.css";
+import useDetectOrientation from "../../hooks/detect-orientation";
 import { Canvas } from "@react-three/fiber";
 
 const Scene = ({ clickedItem, hoveredItem, lerping, setLerping, setTitle }) => {
+  const [initialRender, orientation] = useDetectOrientation();
+
+  useEffect(() => {
+    if (!initialRender) {
+      window.location.reload(false);
+    }
+  }, [orientation]);
+
   return (
     <div className={classes.background}>
       <Canvas

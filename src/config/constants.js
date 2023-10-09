@@ -14,7 +14,7 @@ export let planets = [
   {
     id: 0,
     name: "Mercury",
-    size: window.matchMedia("(min-width: 640px)").matches ? 0.3 : 0.1,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.2 : 0.08,
     modelPath: "./mercury/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 2,
@@ -29,7 +29,7 @@ export let planets = [
   {
     id: 1,
     name: "Venus",
-    size: window.matchMedia("(min-width: 640px)").matches ? 0.09 : 0.02,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.045 : 0.015,
     modelPath: "./venus/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1.8,
@@ -44,7 +44,7 @@ export let planets = [
   {
     id: 2,
     name: "Earth",
-    size: window.matchMedia("(min-width: 640px)").matches ? 0.07 : 0.015,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.4 : 0.15,
     modelPath: "./earth/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1.6,
@@ -59,7 +59,7 @@ export let planets = [
   {
     id: 3,
     name: "Mars",
-    size: window.matchMedia("(min-width: 640px)").matches ? 5 : 1.6,
+    size: window.matchMedia("(min-width: 640px)").matches ? 3 : 1.1,
     modelPath: "./mars/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 1.4,
@@ -104,7 +104,7 @@ export let planets = [
   {
     id: 6,
     name: "Uranus",
-    size: window.matchMedia("(min-width: 640px)").matches ? 0.06 : 0.02,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.07 : 0.023,
     modelPath: "./uranus/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 0.8,
@@ -119,7 +119,7 @@ export let planets = [
   {
     id: 7,
     name: "Neptune",
-    size: window.matchMedia("(min-width: 640px)").matches ? 0.55 : 0.15,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.6 : 0.2,
     modelPath: "./neptune/scene.gltf",
     hasObliqueEcliptic: false,
     revolutionPeriodMultiplyFactor: 0.6,
@@ -134,7 +134,7 @@ export let planets = [
   {
     id: 8,
     name: "Pluto",
-    size: window.matchMedia("(min-width: 640px)").matches ? 0.0125 : 0.005,
+    size: window.matchMedia("(min-width: 640px)").matches ? 0.009 : 0.002,
     modelPath: "./pluto/scene.gltf",
     hasObliqueEcliptic: true,
     revolutionPeriodMultiplyFactor: 0.4,
@@ -216,3 +216,4 @@ export const LERP_CAMERA = "LERP_CAMERA";
 export const CLICK_INFO = "CLICK_INFO";
 export const CHANGE_TITLE = "CHANGE_TITLE";
 export const SHOW_BAR = "SHOW_BAR";
+export const HIDE_ABOUT_PAGE = "HIDE_ABOUT_PAGE";

@@ -12,8 +12,8 @@ const InfoModal = ({ setIsInfoClicked }) => {
           <tbody>
             {galaxyData.map((data) => (
               <tr key={data[0]}>
-                <td className={classes["tabel-data"]}>{data[0]}</td>
-                <td className={classes["tabel-data"]}>{data[1]}</td>
+                <td className={classes["info-table-data"]}>{data[0]}</td>
+                <td className={classes["info-table-data"]}>{data[1]}</td>
               </tr>
             ))}
           </tbody>
@@ -21,12 +21,10 @@ const InfoModal = ({ setIsInfoClicked }) => {
       </section>
       <section>
         <h1 className={classes["section-head"]}>Controls</h1>
-        <p className={classes.data}>
+        <p className={classes["info-data"]}>
           Press left click + drag, or swipe to move the camera direction. To pan
-          the camera, right click + drag. For zooming, use a scroll motion or
-          pinch your fingers together / outward. When observing a planet, you
-          have the ability to navigate around it by performing a left-click and
-          drag gesture, or a swipe.
+          the camera, right click + drag, or swipe using two fingers. For
+          zooming, use a scroll motion or pinch your fingers together / outward.
         </p>
       </section>
       <Button

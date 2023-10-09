@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useProgress } from "@react-three/drei";
-import { isDesktop } from "react-device-detect";
 import FadeBackdrop from "../fadeBackdrop/FadeBackdrop";
 import LinkedInProfileCard from "../linkedInProfileCard/LinkedInProfileCard";
 import { deleteText } from "../utils/backspace";
@@ -9,7 +8,11 @@ import Button from "../button/Button";
 import classes from "./AboutPage.module.css";
 import LoadingBar from "../loadingBar/LoadingBar";
 
-const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
+const AboutPage = ({
+  isLoadingBarVisible,
+  setIsLoadingBarVisible,
+  setIsAboutPageVisible,
+}) => {
   const { progress } = useProgress();
   const [containerClasses, setContainerClasses] = useState(classes.container);
   const [isBackdropVisible, setIsBackdropVisible] = useState(false);
@@ -59,14 +62,9 @@ const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
               asteroid belt, and an array of thousands of stars.
             </p>
             <p className={classes.paragraph} id="recommendation">
-              <span className={classes.usage}>
-                Use a laptop or desktop computer
-              </span>{" "}
-              equipped with the most up-to-date versions of either Google Chrome
-              or Safari Technology Preview.{" "}
-              <span className={classes.usage}>Mobile</span> version is currently
-              <span className={classes.usage}> not supported</span> due to the
-              size of the 3D models.
+              To enhance your viewing enjoyment, we recommend using a laptop or
+              desktop computer equipped with the most up-to-date versions of
+              either Google Chrome or Safari Technology Preview.
             </p>
           </div>
 
@@ -79,13 +77,15 @@ const AboutPage = ({ isLoadingBarVisible, setIsLoadingBarVisible }) => {
             <Button
               onClick={clickHandler}
               className={isFadeOutTrue && classes["fade-out"]}
-              text={isDesktop ? "View Scene" : "Use laptop / desktop"}
+              text="View Scene"
             />
           </div>
         </section>
         {isLoadingBarVisible && <LoadingBar progress={progress} />}
       </div>
-      {isBackdropVisible && <FadeBackdrop />}
+      {isBackdropVisible && (
+        <FadeBackdrop setIsAboutPageVisible={setIsAboutPageVisible} />
+      )}
     </>
   );
 };

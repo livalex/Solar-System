@@ -39,7 +39,7 @@ const LoadingBar = ({ progress }) => {
       <div className={classes["loading-text"]}>
         <TypeIt
           options={{
-            strings: ["Loading the scene..."],
+            strings: ["Loading the scene, this might take a while..."],
             speed: 15,
           }}
         />

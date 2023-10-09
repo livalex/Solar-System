@@ -91,29 +91,31 @@ table {
   }
 
   ul li:first-child {
+    padding: 0;
+    padding-left: 0.5rem;
+    padding-top: 0.15rem;
     font-size: 0.65rem;
-    height: 1.45rem;
-    padding-bottom: 1.2rem;
+    height: 1.3rem;
   }
 
   ul li:not(:first-child) {
+    padding: 0;
+    padding-left: 0.5rem;
+    padding-top: 0.1rem;
     font-size: 0.65rem;
-    height: 1.45rem;
+    height: 0.9rem;
   }
 
   .table-data {
-    font-size: 0.55rem;
+    font-size: 0.3rem;
   }
 
   .details {
-    padding: 0.1rem 0rem 0.1rem 1rem;
+    padding: 0.2rem 0rem 0.1rem 0.5rem;
   }
 
-  .plus-icon {
-    bottom: 0.15rem;
-  }
-
+  .plus-icon,
   .minus-icon {
-    bottom: 0.1rem;
+    top: 0rem;
   }
 }

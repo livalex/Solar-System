@@ -1,6 +1,5 @@
-import React, { useEffect, useReducer } from "react";
+import { useReducer } from "react";
 import Scene from "./components/canvas/scene/Scene";
-import useDetectOrientation from "./components/hooks/detect-orientation";
 import PlanetsTable from "./components/planetsTable/PlanetsTable";
 import InfoIcon from "./components/infoIcon/InfoIcon";
 import InfoModal from "./components/infoModal/InfoModal";
@@ -13,6 +12,7 @@ import {
   CHANGE_TITLE,
   CLICK_INFO,
   CLICK_ITEM,
+  HIDE_ABOUT_PAGE,
   HOVER_ITEM,
   LERP_CAMERA,
   SHOW_BAR,
@@ -25,6 +25,7 @@ const defaultAppState = {
   isInfoClicked: false,
   title: "Solar System",
   isLoadingBarVisible: false,
+  isAboutPageVisible: true,
 };
 
 const appReducer = (state, action) => {
@@ -70,12 +71,18 @@ const appReducer = (state, action) => {
     };
   }
 
+  if (action.type === HIDE_ABOUT_PAGE) {
+    return {
+      ...state,
+      isAboutPageVisible: action.isAboutPageVisible,
+    };
+  }
+
   throw Error("Unknown action.");
 };
 
 function App() {
   const [appState, dispatchAppAction] = useReducer(appReducer, defaultAppState);
-  const [initialRender, orientation] = useDetectOrientation();
 
   const setClickedItem = (id) => {
     dispatchAppAction({ type: CLICK_ITEM, id });
@@ -101,11 +108,9 @@ function App() {
     dispatchAppAction({ type: SHOW_BAR, isLoadingBarVisible });
   };
 
-  useEffect(() => {
-    if (!initialRender) {
-      window.location.reload(false);
-    }
-  }, [orientation]);
+  const setIsAboutPageVisible = (isAboutPageVisible) => {
+    dispatchAppAction({ type: HIDE_ABOUT_PAGE, isAboutPageVisible });
+  };
 
   return (
     <>
@@ -119,10 +124,13 @@ function App() {
       <InfoIcon setIsInfoClicked={setIsInfoClicked} />
       <Title title={appState.title} />
       <LinkedInProfileCard className="scene-card" />
-      <AboutPage
-        isLoadingBarVisible={appState.isLoadingBarVisible}
-        setIsLoadingBarVisible={setIsLoadingBarVisible}
-      />
+      {appState.isAboutPageVisible && (
+        <AboutPage
+          isLoadingBarVisible={appState.isLoadingBarVisible}
+          setIsLoadingBarVisible={setIsLoadingBarVisible}
+          setIsAboutPageVisible={setIsAboutPageVisible}
+        />
+      )}
       {appState.isInfoClicked && (
         <PortalHoc>
           <Backdrop setIsInfoClicked={setIsInfoClicked} />
